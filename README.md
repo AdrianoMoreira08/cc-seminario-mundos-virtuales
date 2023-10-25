@@ -80,7 +80,9 @@ transform.worldToLocalMatrix;
 Camera.main.worldToCameraMatrix;
 ```
 
-![Imagen 5](img/image4.png)
+![Imagen 4](img/image4.png)
+
+![Imagen 5](img/image5.png)
 
 14. Aplica una rotación en el start de uno de los objetos de la escena y muestra la matriz de cambio al sistema de referencias mundial.
 
