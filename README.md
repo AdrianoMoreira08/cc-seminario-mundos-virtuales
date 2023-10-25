@@ -87,3 +87,22 @@ Camera.main.worldToCameraMatrix;
 ![Imagen 6](img/image6.png)
 
 15. ¿Como puedes calcular las coordenadas del sistema de referencia de un objeto con las siguientes propiedades del Transform:?: Position (3, 1, 1), Rotation (45, 0, 45)
+
+```cs
+using UnityEngine;
+
+// Crear un objeto Transform para representar las propiedades del objeto
+Transform myTransform = new Transform();
+
+// Asignar la posición y rotación al Transform
+myTransform.position = new Vector3(3, 1, 1);
+myTransform.rotation = Quaternion.Euler(new Vector3(45, 0, 45));
+
+// Obtener la matriz de transformación del objeto
+Matrix4x4 transformationMatrix = Matrix4x4.TRS(myTransform.position, myTransform.rotation, Vector3.one);
+
+// Ahora puedes aplicar esta matriz a cualquier punto para obtener su posición transformada
+Vector3 puntoEnLocalSpace = transformationMatrix.MultiplyPoint(Vector3.zero);
+
+Debug.Log("Posición en Local Space: " + puntoEnLocalSpace);
+```
